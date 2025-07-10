@@ -31,10 +31,10 @@ def index():
 
 # Defines another route to add a contact. This accepts GET, which displays the form,
 # and POST, which processes the form information
-app.route('/add', methods=['GET', 'POST'])
+@app.route('/add', methods=['GET', 'POST'])
 def add_contact():
     # If the method is asked to process information given in the form
-    if request.method() == 'POST':
+    if request.method == 'POST':
         
         # Use request.form to get information from the HTML form
         name = request.form['name']
